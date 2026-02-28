@@ -1,33 +1,236 @@
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
-    background: #f5f5f5;
-    color: #333;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-header {
-    background: #111;
+body {
+    font-family: 'Segoe UI', sans-serif;
     color: white;
-    padding: 40px;
+    line-height: 1.6;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #8e0038, #c2185b, #ff4081);
+    position: relative;
+}
+
+/* Soft floating blobs background */
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: -1;
+}
+
+body::before {
+    width: 400px;
+    height: 400px;
+    background: #ff80ab;
+    top: -100px;
+    left: -100px;
+}
+
+body::after {
+    width: 500px;
+    height: 500px;
+    background: #ff1744;
+    bottom: -150px;
+    right: -150px;
+}
+
+/* Navbar */
+
+.navbar {
+    background: rgba(0,0,0,0.3);
+    padding: 15px 0;
+}
+
+.container {
+    width: 85%;
+    margin: auto;
+}
+
+.nav-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.nav-links a {
+    color: #ffe4ec;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+/* Hero */
+
+.hero {
+    padding: 120px 0;
     text-align: center;
 }
 
-section {
-    padding: 40px;
+.hero-content {
     max-width: 800px;
     margin: auto;
 }
 
-.project {
-    background: white;
-    padding: 20px;
-    margin-bottom: 15px;
-    border-radius: 8px;
+/* Profile Image */
+
+.profile-pic {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    object-fit: cover;
+    padding: 6px;
+    background: linear-gradient(45deg, #ffffff, #ffc1e3);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    margin-bottom: 30px;
 }
 
-footer {
-    background: #222;
+/* Text */
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.hero-description {
+    font-size: 18px;
+    color: #ffe4ec;
+}
+
+/* Sections */
+
+.section {
+    padding: 80px 0;
+}
+
+.section h2 {
+    margin-bottom: 30px;
+    font-size: 28px;
+    text-align: center;
+}
+
+.light {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(6px);
+}
+
+/* Cards */
+
+.card {
+    background: rgba(255,255,255,0.12);
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(8px);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    background: rgba(255,255,255,0.2);
+}
+
+/* Skills */
+
+.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.skill {
+    background: white;
+    color: #c2185b;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.skill:hover {
+    background: #ff4081;
     color: white;
+}
+/* ===== LANGUAGES SECTION ===== */
+
+.language {
+    margin-bottom: 30px;
+}
+
+.language p {
+    margin-bottom: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Thanh nền */
+.bar {
+    width: 100%;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.35);  /* sáng hơn để không chìm */
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* Thanh mức độ */
+.fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ffffff, #ffe6f0);
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(255,255,255,0.6);
+    transition: width 1.5s ease-in-out;
+}
+.edu-card {
+    background: rgba(255,255,255,0.12);
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+}
+
+.edu-card h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.major {
+    opacity: 0.9;
+    margin-bottom: 5px;
+}
+
+.year {
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+.edu-card ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.edu-card li {
+    margin-bottom: 8px;
+}
+
+/* Footer */
+
+footer {
+    background: rgba(0,0,0,0.4);
     text-align: center;
     padding: 20px;
 }
